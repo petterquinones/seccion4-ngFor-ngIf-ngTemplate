@@ -1,0 +1,66 @@
+<div>
+    <p>
+        Si la condición propuesta en el ngIf se cumple muestra el primer div, en caso contrario muestra el div con el nombre de ng-template #noBorrado
+    </p>
+    <div *ngIf="nombreBorrado; else noBorrado">
+        
+      <h3>Nombre Borrado: <small>{{nombreBorrado}}</small> </h3>
+    </div>
+    <div>
+        
+        <ng-template #noBorrado>
+            <h1> ng-template</h1>
+            <h3>No he borrado nada.</h3>
+        </ng-template>
+    </div>
+
+</div>
+
+
+<div>
+    <h1>ngIf</h1>
+    <p> Condicional que realiza la misma tarea del ciclo if</p>
+    <p>
+        la siguiente linea de código evalua si es true muestra la información, si es falso no muestra la información.
+        si la variable nombreBorrado  es vacia
+    </p> 
+
+    <div *ngIf="nombreBorrado !== ''">
+            <h3>Lista Nombres</h3>
+            <span>{{nombreBorrado}}</span>
+    </div>
+
+</div>
+
+
+
+
+
+<div>
+
+    <h1>ngFor</h1>
+    <p>
+        El ngFor funciona igual que un ciclo for pero este lo ejecutamos en el html
+    </p>
+    
+    <p>
+        en el siguiente array estoy recorriendo el array de names que tengo el el listado.component.ts
+    </p>
+    
+    <p>
+        names:string[]= ['Pedro', 'Sara','Victoria','Bianca'];
+    </p>
+    
+    <H2>Elemento borrado:
+        <span>{{nombreBorrado}}</span>
+    </H2>
+    
+    <button (click)="borrarNombre()">Borrar name</button>
+    <br>
+
+    <ul>
+        <li *ngFor="let name of names; let i = index">
+            {{name}} - {{i}}
+        </li>
+    </ul>
+</div>
