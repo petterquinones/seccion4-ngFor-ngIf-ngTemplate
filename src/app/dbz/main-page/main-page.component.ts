@@ -1,8 +1,8 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-interface Personaje{
+interface Personaje {
   nombre: string;
-  poder: number
+  edad: number
 }
 
 @Component({
@@ -10,17 +10,37 @@ interface Personaje{
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent{
+export class MainPageComponent {
 
-  nuevo:Personaje ={
-    nombre: "Personaje1",
-    poder: 225
+  personas: Personaje[] = [
+    {
+      nombre: "Pedro",
+      edad: 34
+    },
+    {
+      nombre: "Sara",
+      edad: 29
+    },
+
+  ];
+
+  nuevo: Personaje = {
+    nombre: "",
+    edad: 0
   }
 
 
-  agregar(){
-    console.log(this.nuevo)
-    console.log("click Agregar")
+  agregar() {
+    //Si el nombre esta en blanco salte el metodo.
+    if (this.nuevo.nombre.trim().length === 0) {
+      return;
+    }
+    this.personas.push(this.nuevo);
+    //Limpiar el objeto para que aparezca vacio
+    this.nuevo={
+      nombre: "",
+      edad: 0
+    }
   }
 
 }
