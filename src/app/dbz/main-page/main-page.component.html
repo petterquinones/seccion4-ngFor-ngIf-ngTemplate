@@ -1,12 +1,9 @@
 <h1>Dragon Ball Z</h1>
 <hr />
 <div class="row">
+
   <div class="col">
-    <h3>Personajes</h3>
-    <hr />
-      <ul>
-        <li *ngFor="let item of personas">{{item.nombre}}-{{item.edad}}</li>
-      </ul>
+    <app-personajes [personasData]="personas"></app-personajes>
   </div>
 
   <div class="col">
@@ -14,20 +11,36 @@
     <hr />
 
     <form (ngSubmit)="agregar()">
-      <input
-        type="text"
-        placeholder="Nombre"
-        name="nombre"
-        [value]="nuevo.nombre"
-        [(ngModel)]="nuevo.nombre"
-      />
+      <div>
+        <label><small>Nombre:</small></label>
+        <input
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          [value]="nuevo.nombre"
+          [(ngModel)]="nuevo.nombre"
+        />
+      </div>
 
-      <input
-        type="number"
-        placeholder="edad"
-        name="edad"
-        [(ngModel)]="nuevo.edad"
-      />
+      <div>
+        <label> <small>Edad:</small></label>
+        <input
+          type="number"
+          placeholder="edad"
+          name="edad"
+          [(ngModel)]="nuevo.edad"
+        />
+      </div>
+
+      <div>
+        <label> <small>Salario:</small> </label>
+        <input
+          type="number"
+          placeholder="salario"
+          name="salario"
+          [(ngModel)]="nuevo.salario"
+        />
+      </div>
 
       <button type="submit">Agregar</button>
     </form>

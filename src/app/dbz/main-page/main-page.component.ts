@@ -1,33 +1,32 @@
 import { Component } from '@angular/core';
 
-interface Personaje {
-  nombre: string;
-  edad: number
-}
+import { Personaje } from './../interface/Personaje';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
 
   personas: Personaje[] = [
     {
       nombre: "Pedro",
-      edad: 34
+      edad: 34,
+      salario:8000000
     },
     {
       nombre: "Sara",
-      edad: 29
+      edad: 29,
+      salario: 8000000
     },
-
   ];
+
 
   nuevo: Personaje = {
     nombre: "",
-    edad: 0
-  }
+    edad: 0,
+    salario:0
+  } 
 
 
   agregar() {
@@ -39,7 +38,8 @@ export class MainPageComponent {
     //Limpiar el objeto para que aparezca vacio
     this.nuevo={
       nombre: "",
-      edad: 0
+      edad: 0,
+      salario:0
     }
   }
 

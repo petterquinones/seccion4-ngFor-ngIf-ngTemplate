@@ -1,0 +1,11 @@
+<p>personajes works!</p>
+<!--  -->
+<h3>Personajes</h3>
+<hr />
+<ul>
+  <li *ngFor="let item of personas">
+    <p>{{ item.nombre }}</p>
+    <p>{{ item.edad }} años</p>
+    <p>{{ item.salario | currency }}</p>
+  </li>
+</ul>
