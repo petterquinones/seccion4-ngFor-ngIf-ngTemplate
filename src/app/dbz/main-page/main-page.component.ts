@@ -1,46 +1,34 @@
 import { Component } from '@angular/core';
 
 import { Personaje } from './../interface/Personaje';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
 })
-export class MainPageComponent {
 
-  personas: Personaje[] = [
-    {
-      nombre: "Pedro",
-      edad: 34,
-      salario:8000000
-    },
-    {
-      nombre: "Sara",
-      edad: 29,
-      salario: 8000000
-    },
-  ];
+export class MainPageComponent {
 
 
   nuevo: Personaje = {
-    nombre: "",
+    nombre: "Valor por defecto",
     edad: 0,
-    salario:0
-  } 
+    salario: 0
+  }
 
+  // addNewPersonaje(argumento:Personaje) {
+  //   console.log(argumento); 
+  // }
 
-  agregar() {
-    //Si el nombre esta en blanco salte el metodo.
-    if (this.nuevo.nombre.trim().length === 0) {
-      return;
-    }
-    this.personas.push(this.nuevo);
-    //Limpiar el objeto para que aparezca vacio
-    this.nuevo={
-      nombre: "",
-      edad: 0,
-      salario:0
-    }
+  //Mediante un getter estoy obteniendo información del servicio.
+  //De esta forma estoy captando la información o data que se esta manipulando desde el servicio.
+  // get personas():Personaje []{
+  //   return this.dbzService.personas;
+  // }
+
+  constructor(){
+    
   }
 
 }

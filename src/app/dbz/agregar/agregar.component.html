@@ -1,0 +1,39 @@
+
+
+<h3>Agregar</h3>
+<hr />
+<form (ngSubmit)="agregar()">
+  <div>
+    <label><small>Nombre:</small></label>
+    <input
+      type="text"
+      placeholder="Nombre"
+      name="nombre"
+      [value]="nuevo.nombre"
+      [(ngModel)]="nuevo.nombre"
+    />
+  </div>
+
+  <div>
+    <label> <small>Edad:</small></label>
+    <input
+      type="number"
+      placeholder="edad"
+      name="edad"
+      [(ngModel)]="nuevo.edad"
+    />
+  </div>
+
+  <div>
+    <label> <small>Salario:</small> </label>
+    <input
+      type="number"
+      placeholder="salario"
+      name="salario"
+      [(ngModel)]="nuevo.salario"
+    />
+  </div>
+
+  <button type="submit">Agregar</button>
+</form>
+
